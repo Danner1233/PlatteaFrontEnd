@@ -1,5 +1,6 @@
 import React from "react";
 import logo from '../../static/img/pnologo.png';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -76,9 +77,7 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="about.html">
-                      Sobre
-                    </a>
+                  <Link to="/Aboutus" className="nav-link">Sobre</Link>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="shop.html">
@@ -119,18 +118,13 @@ const Navbar = () => {
                   href="#"
                 >
                   <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1" />
-                  <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">
-                    7
-                  </span>
+
                 </a>
                 <a
                   className="nav-icon position-relative text-decoration-none"
                   href="#"
                 >
                   <i className="fa fa-fw fa-user text-dark mr-3" />
-                  <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">
-                    +99
-                  </span>
                 </a>
               </div>
             </div>

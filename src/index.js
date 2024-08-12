@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Importar Bootstrap CSS
 import App from './App';
-import { Tooltip, Toast, Popover } from 'bootstrap';
-import Alert from 'bootstrap/js/dist/alert';
+// Eliminar las importaciones innecesarias de Bootstrap JS
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
