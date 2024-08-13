@@ -6,6 +6,11 @@ import Aboutus from "./pages/Aboutus";
 import About from "./components/About";
 import Services from "./components/Services";
 import Brands from "./components/Brands";
+import Contactus from "./pages/Contactus";
+import Contact from "./components/Contact";
+import Infocontact from "./components/Infocontact";
+import Shop from "./pages/Shop";
+import Products from "./components/Products";
 
 function App() {
   return (
@@ -17,6 +22,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/brands" element={<Brands />} />
+        <Route path="/contactanos" element={<Contactus />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/infocontact" element={<Infocontact />} />
+        <Route path="/productos" element={<Shop />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
       <Footer />
     </Router>
