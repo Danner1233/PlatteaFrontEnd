@@ -2,10 +2,13 @@ import React from "react";
 import Carrusel from "../components/Carrusel";
 import Featured from "../components/Featured";
 import Featuredstore from "../components/Featuredstore";
+import Modal from "../components/Modal";
+
 
 const Main = () => {
   return (
     <div>
+      <Modal />
       <Carrusel />
       <Featured />
       <Featuredstore />

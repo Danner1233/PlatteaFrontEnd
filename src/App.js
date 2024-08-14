@@ -10,7 +10,11 @@ import Contactus from "./pages/Contactus";
 import Contact from "./components/Contact";
 import Infocontact from "./components/Infocontact";
 import Shop from "./pages/Shop";
+import Tiendas from "./pages/Tiendas";
 import Products from "./components/Products";
+import Stores from "./components/Stores";
+import Product from "./pages/Product";
+import { Modal } from "bootstrap";
 
 function App() {
   return (
@@ -27,6 +31,10 @@ function App() {
         <Route path="/infocontact" element={<Infocontact />} />
         <Route path="/productos" element={<Shop />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/tiendas" element={<Tiendas />} />
+        <Route path="/stores" element={<Stores />} />
+        <Route path="/producto" element={<Product />} />
+        <Route path="/buscar" element={<Modal />} />
       </Routes>
       <Footer />
     </Router>

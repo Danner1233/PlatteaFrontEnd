@@ -136,7 +136,7 @@ const Products = () => {
                       <li>
                         <a
                           className="btn btn-success text-white"
-                          href="shop-single.html"
+                          href="/producto"
                         >
                           <i className="far fa-heart" />
                         </a>
@@ -144,7 +144,7 @@ const Products = () => {
                       <li>
                         <a
                           className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
+                          href="/producto"
                         >
                           <i className="far fa-eye" />
                         </a>
@@ -152,7 +152,7 @@ const Products = () => {
                       <li>
                         <a
                           className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
+                          href="/producto"
                         >
                           <i className="fas fa-cart-plus" />
                         </a>
@@ -162,7 +162,7 @@ const Products = () => {
                 </div>
                 <div className="card-body">
                   <a
-                    href="shop-single.html"
+                    href="/producto"
                     className="h3 text-decoration-none"
                   >
                     Oupidatat non

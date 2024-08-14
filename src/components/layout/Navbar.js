@@ -52,14 +52,18 @@ function Navbar() {
                     <Link className="nav-link" to="/">Inicio</Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/Aboutus">Sobre</Link>
+                    <Link className="nav-link" to="/tiendas">Tiendas</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/productos">Comprar</Link>
                   </li>
                   <li className="nav-item">
+                    <Link className="nav-link" to="/Aboutus">Sobre</Link>
+                  </li>
+                  <li className="nav-item">
                     <Link className="nav-link" to="/contactanos">Contactanos</Link>
                   </li>
+                  
                 </ul>
               </div>
               <div className="navbar align-self-center d-flex">
