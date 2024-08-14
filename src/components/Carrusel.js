@@ -72,7 +72,6 @@ function Carrusel() {
             className="active"
           />
           <li
-            data-bs-target="#template-mo-zay-hero-carousel"
             data-bs-slide-to={1}
           />
           <li

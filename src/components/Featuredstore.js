@@ -1,4 +1,9 @@
 import React from "react";
+import netflix from '../static/img/Netflix.jpg'
+import prime from '../static/img/primeVideo.jpg'
+import adidas from '../static/img/adidas.jpeg'
+
+
 
 const Featuredstore = () => {
   return (
@@ -19,7 +24,7 @@ const Featuredstore = () => {
               <div className="card h-100">
                 <a href="shop-single.html">
                   <img
-                    src="./assets/img/Netflix.jpg"
+                    src={netflix}
                     className="card-img-top"
                     alt="..."
                     height="270px"
@@ -54,7 +59,7 @@ const Featuredstore = () => {
               <div className="card h-100">
                 <a href="shop-single.html">
                   <img
-                    src="./assets/img/primeVideo.jpg"
+                    src={prime}
                     className="card-img-top"
                     alt="..."
                     height="270px"
@@ -89,7 +94,7 @@ const Featuredstore = () => {
               <div className="card h-100">
                 <a href="shop-single.html">
                   <img
-                    src="./assets/img/adidas.jpeg"
+                    src={adidas}
                     className="card-img-top"
                     alt="..."
                     height="270px"

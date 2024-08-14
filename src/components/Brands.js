@@ -1,4 +1,9 @@
 import React from 'react'
+import levis from '../static/img/brand_01.png';
+import adidas from '../static/img/brand_02.png';
+import nike from '../static/img/brand_03.png';
+import hm from '../static/img/brand_04.png';
+
 
 const Brands = () => {
     return (
@@ -7,10 +12,10 @@ const Brands = () => {
                 <div className="container my-4">
                     <div className="row text-center py-3">
                         <div className="col-lg-6 m-auto">
-                            <h1 className="h1">Our Brands</h1>
+                            <h1 className="h1">Marcas</h1>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                Lorem ipsum dolor sit amet.
+                            Ofrecemos una amplia selección de marcas reconocidas a nivel mundial. 
+                            Explora nuestra colección de productos de alta calidad de marcas como Levi's, Adidas, Nike, y H&M, entre muchas otras.
                             </p>
                         </div>
                         <div className="col-lg-9 m-auto tempaltemo-carousel">
@@ -31,16 +36,16 @@ const Brands = () => {
                                             <div className="carousel-item active">
                                                 <div className="row">
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_01.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={levis} alt="Brand Logo" /></a>
                                                     </div>
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_02.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={adidas} alt="Brand Logo" /></a>
                                                     </div>
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_03.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={nike} alt="Brand Logo" /></a>
                                                     </div>
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_04.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={hm} alt="Brand Logo" /></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -49,16 +54,16 @@ const Brands = () => {
                                             <div className="carousel-item">
                                                 <div className="row">
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_01.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={levis} alt="Brand Logo" /></a>
                                                     </div>
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_02.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={adidas} alt="Brand Logo" /></a>
                                                     </div>
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_03.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={nike} alt="Brand Logo" /></a>
                                                     </div>
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_04.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={hm} alt="Brand Logo" /></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,16 +72,16 @@ const Brands = () => {
                                             <div className="carousel-item">
                                                 <div className="row">
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_01.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={levis} alt="Brand Logo" /></a>
                                                     </div>
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_02.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={adidas} alt="Brand Logo" /></a>
                                                     </div>
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_03.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={nike} alt="Brand Logo" /></a>
                                                     </div>
                                                     <div className="col-3 p-md-5">
-                                                        <a href="#"><img className="img-fluid brand-img" src="assets/img/brand_04.png" alt="Brand Logo" /></a>
+                                                        <a href="#"><img className="img-fluid brand-img" src={hm} alt="Brand Logo" /></a>
                                                     </div>
                                                 </div>
                                             </div>

@@ -6,10 +6,10 @@ const Services = () => {
             <section className="container py-5">
                 <div className="row text-center pt-5 pb-3">
                     <div className="col-lg-6 m-auto">
-                        <h1 className="h1">Our Services</h1>
+                        <h1 className="h1">Nuestros Servicios</h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            Lorem ipsum dolor sit amet.
+                        Nos especializamos en ofrecerte una plataforma confiable y eficiente, con soporte en tiempo real, opciones de entrega flexibles, y un proceso de devolución sin estrés. 
+                        Tu comodidad es nuestra prioridad.
                         </p>
                     </div>
                 </div>

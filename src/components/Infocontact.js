@@ -7,43 +7,43 @@ const Infocontact = () => {
         <form className="col-md-9 m-auto" method="post" role="form">
           <div className="row">
             <div className="form-group col-md-6 mb-3">
-              <label htmlFor="inputname">Name</label>
+              <label htmlFor="inputname">Nombre</label>
               <input
                 type="text"
                 className="form-control mt-1"
                 id="name"
                 name="name"
-                placeholder="Name"
+                placeholder="Nombre"
               />
             </div>
             <div className="form-group col-md-6 mb-3">
-              <label htmlFor="inputemail">Email</label>
+              <label htmlFor="inputemail">Correo</label>
               <input
                 type="email"
                 className="form-control mt-1"
                 id="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Correo"
               />
             </div>
           </div>
           <div className="mb-3">
-            <label htmlFor="inputsubject">Subject</label>
+            <label htmlFor="inputsubject">Asunto</label>
             <input
               type="text"
               className="form-control mt-1"
               id="subject"
               name="subject"
-              placeholder="Subject"
+              placeholder="Asunto"
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="inputmessage">Message</label>
+            <label htmlFor="inputmessage">Mensaje</label>
             <textarea
               className="form-control mt-1"
               id="message"
               name="message"
-              placeholder="Message"
+              placeholder="Mensaje"
               rows={8}
               defaultValue={""}
             />
@@ -51,7 +51,7 @@ const Infocontact = () => {
           <div className="row">
             <div className="col text-end mt-2">
               <button type="submit" className="btn btn-success btn-lg px-3">
-                Let’s Talk
+                Enviar
               </button>
             </div>
           </div>

@@ -1,4 +1,13 @@
 import React from "react";
+import shop1 from '../static/img/shop_01.jpg';
+import shop2 from '../static/img/shop_02.jpg';
+import shop3 from '../static/img/shop_03.jpg';
+import shop4 from '../static/img/shop_04.jpg';
+import shop5 from '../static/img/shop_05.jpg';
+import shop6 from '../static/img/shop_06.jpg';
+import shop7 from '../static/img/shop_07.jpg';
+import shop8 from '../static/img/shop_08.jpg';
+import shop9 from '../static/img/shop_09.jpg';
 
 const Products = () => {
   return (
@@ -12,18 +21,18 @@ const Products = () => {
                 className="collapsed d-flex justify-content-between h3 text-decoration-none"
                 href="#"
               >
-                Gender
+                Genero
                 <i className="fa fa-fw fa-chevron-circle-down mt-1" />
               </a>
               <ul className="collapse show list-unstyled pl-3">
                 <li>
                   <a className="text-decoration-none" href="#">
-                    Men
+                    Hombre
                   </a>
                 </li>
                 <li>
                   <a className="text-decoration-none" href="#">
-                    Women
+                    Mujer
                   </a>
                 </li>
               </ul>
@@ -39,12 +48,12 @@ const Products = () => {
               <ul id="collapseTwo" className="collapse list-unstyled pl-3">
                 <li>
                   <a className="text-decoration-none" href="#">
-                    Sport
+                    Deportivo
                   </a>
                 </li>
                 <li>
                   <a className="text-decoration-none" href="#">
-                    Luxury
+                    Lujo
                   </a>
                 </li>
               </ul>
@@ -54,23 +63,23 @@ const Products = () => {
                 className="collapsed d-flex justify-content-between h3 text-decoration-none"
                 href="#"
               >
-                Product
+                Producto
                 <i className="pull-right fa fa-fw fa-chevron-circle-down mt-1" />
               </a>
               <ul id="collapseThree" className="collapse list-unstyled pl-3">
                 <li>
                   <a className="text-decoration-none" href="#">
-                    Bag
+                    Bolsa
                   </a>
                 </li>
                 <li>
                   <a className="text-decoration-none" href="#">
-                    Sweather
+                    jersey
                   </a>
                 </li>
                 <li>
                   <a className="text-decoration-none" href="#">
-                    Sunglass
+                    Gafas de sol
                   </a>
                 </li>
               </ul>
@@ -86,7 +95,7 @@ const Products = () => {
                     className="h3 text-dark text-decoration-none mr-3"
                     href="#"
                   >
-                    All
+                    Todo
                   </a>
                 </li>
                 <li className="list-inline-item">
@@ -94,12 +103,12 @@ const Products = () => {
                     className="h3 text-dark text-decoration-none mr-3"
                     href="#"
                   >
-                    Men's
+                    Hombre
                   </a>
                 </li>
                 <li className="list-inline-item">
                   <a className="h3 text-dark text-decoration-none" href="#">
-                    Women's
+                    Mujer
                   </a>
                 </li>
               </ul>
@@ -107,9 +116,9 @@ const Products = () => {
             <div className="col-md-6 pb-4">
               <div className="d-flex">
                 <select className="form-control">
-                  <option>Featured</option>
-                  <option>A to Z</option>
-                  <option>Item</option>
+                  <option>Destacado</option>
+                  <option>A - Z</option>
+                  <option>Articulo</option>
                 </select>
               </div>
             </div>
@@ -120,7 +129,7 @@ const Products = () => {
                 <div className="card rounded-0">
                   <img
                     className="card-img rounded-0 img-fluid"
-                    src="assets/img/shop_01.jpg"
+                    src={shop1}
                   />
                   <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                     <ul className="list-unstyled">
@@ -186,7 +195,7 @@ const Products = () => {
                 <div className="card rounded-0">
                   <img
                     className="card-img rounded-0 img-fluid"
-                    src="assets/img/shop_02.jpg"
+                    src={shop2}
                   />
                   <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                     <ul className="list-unstyled">
@@ -252,7 +261,7 @@ const Products = () => {
                 <div className="card rounded-0">
                   <img
                     className="card-img rounded-0 img-fluid"
-                    src="assets/img/shop_03.jpg"
+                    src={shop3}
                   />
                   <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                     <ul className="list-unstyled">
@@ -318,7 +327,7 @@ const Products = () => {
                 <div className="card rounded-0">
                   <img
                     className="card-img rounded-0 img-fluid"
-                    src="assets/img/shop_04.jpg"
+                    src={shop4}
                   />
                   <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                     <ul className="list-unstyled">
@@ -384,7 +393,7 @@ const Products = () => {
                 <div className="card rounded-0">
                   <img
                     className="card-img rounded-0 img-fluid"
-                    src="assets/img/shop_05.jpg"
+                    src={shop5}
                   />
                   <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                     <ul className="list-unstyled">
@@ -450,7 +459,7 @@ const Products = () => {
                 <div className="card rounded-0">
                   <img
                     className="card-img rounded-0 img-fluid"
-                    src="assets/img/shop_06.jpg"
+                    src={shop6}
                   />
                   <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                     <ul className="list-unstyled">
@@ -516,7 +525,7 @@ const Products = () => {
                 <div className="card rounded-0">
                   <img
                     className="card-img rounded-0 img-fluid"
-                    src="assets/img/shop_07.jpg"
+                    src={shop7}
                   />
                   <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                     <ul className="list-unstyled">
@@ -582,7 +591,7 @@ const Products = () => {
                 <div className="card rounded-0">
                   <img
                     className="card-img rounded-0 img-fluid"
-                    src="assets/img/shop_08.jpg"
+                    src={shop8}
                   />
                   <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                     <ul className="list-unstyled">
@@ -648,7 +657,7 @@ const Products = () => {
                 <div className="card rounded-0">
                   <img
                     className="card-img rounded-0 img-fluid"
-                    src="assets/img/shop_09.jpg"
+                    src={shop9}
                   />
                   <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                     <ul className="list-unstyled">
