@@ -18,7 +18,10 @@ import { Modal } from "bootstrap";
 import Perfil from "./pages/Perfil";
 import Carrito from "./pages/Carrito";
 import Banner from "./components/Banner";
-import { Card } from "react-bootstrap";
+import Cart from "./components/Cart"
+import Card3 from "./components/Card3";
+import Card2 from "./components/Card2";
+import Card1 from "./components/Card1";
 
 function App() {
   return (
@@ -42,7 +45,10 @@ function App() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/banner" element={<Banner />} />
         <Route path="/carrito" element={<Carrito />} />
-        <Route path="/card" element={<Card />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/card1" element={<Card3 />} />
+        <Route path="/card2" element={<Card2 />} />
+        <Route path="/card3" element={<Card1 />} />
       </Routes>
       <Footer />
     </Router>

@@ -82,7 +82,10 @@ function Navbar() {
                   <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1" />
                 </Link>
                 <Link className="nav-icon position-relative text-decoration-none" to="/perfil">
-                  <i className="fa fa-fw fa-user text-dark mr-3" />
+                <i className="fa fa-fw fa-user text-dark mr-3" />
+                </Link>
+                <Link className="nav-icon position-relative text-decoration-none" to="/ajustes">
+                <i className="fa fa-fw fa-cog text-dark mr-3" />
                 </Link>
               </div>
             </div>
