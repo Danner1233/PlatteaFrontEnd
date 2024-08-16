@@ -78,12 +78,12 @@ function Navbar() {
                 <a className="nav-icon d-none d-lg-inline" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                   <i className="fa fa-fw fa-search text-dark mr-2" />
                 </a>
-                <a className="nav-icon position-relative text-decoration-none" href="javascript:void(0);">
+                <Link className="nav-icon position-relative text-decoration-none" to="/carrito">
                   <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1" />
-                </a>
-                <a className="nav-icon position-relative text-decoration-none" href="javascript:void(0);">
+                </Link>
+                <Link className="nav-icon position-relative text-decoration-none" to="/perfil">
                   <i className="fa fa-fw fa-user text-dark mr-3" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
