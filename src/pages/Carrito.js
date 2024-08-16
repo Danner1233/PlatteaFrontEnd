@@ -1,12 +1,12 @@
 import React from "react";
-import Card from "../components/Cart";
 import Modal from "../components/Modal";
+import Cart from "../components/Cart";
 
 const Carrito = () => {
   return (
     <div>
       <Modal />
-      <Card />
+      <Cart />
     </div>
   );
 };
