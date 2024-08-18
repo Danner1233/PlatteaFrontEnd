@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 import netflix from '../static/img/Netflix.jpg'
 import prime from '../static/img/primeVideo.jpg'
@@ -84,14 +85,14 @@ const Stores = () => {
             </div>
             <div className="col-12 col-md-4 mb-4">
               <div className="card h-100">
-                <a href="shop-single.html">
+                <Link to="/tienda-JJJ">
                   <img
                     src={adidas}
                     className="card-img-top"
                     alt="..."
                     height="270px"
                   />
-                </a>
+                </Link>
                 <div className="card-body">
                   <ul className="list-unstyled d-flex justify-content-between">
                     <li>

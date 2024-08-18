@@ -19,6 +19,9 @@ import Perfil from "./pages/Perfil";
 import Carrito from "./pages/Carrito";
 import Banner from "./components/Banner";
 import { Card } from "react-bootstrap";
+import Tienda from "./pages/Tienda";
+import Bannertienda from "./components/Bannertienda";
+import Productostienda from "./components/Productostienda";
 
 function App() {
   return (
@@ -43,6 +46,9 @@ function App() {
         <Route path="/banner" element={<Banner />} />
         <Route path="/carrito" element={<Carrito />} />
         <Route path="/card" element={<Card />} />
+        <Route path="/tienda-JJJ" element={<Tienda />} />
+        <Route path="/bannerti" element={<Bannertienda />} />
+        <Route path="/productoti" element={<Productostienda />} />
       </Routes>
       <Footer />
     </Router>

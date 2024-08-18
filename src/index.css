@@ -18430,3 +18430,78 @@ body, ul, li, p, a, label, input, div {
     font-size: 14px;
   }
 }
+
+.banner {
+  background-image: url('https://via.placeholder.com/1200x300'); /* Reemplaza con la URL de la imagen del banner */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px; /* Altura del banner */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.banner h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.store-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 30%;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.product h2 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.product p {
+  font-size: 1em;
+  color: #666;
+}
+
+.buy-button {
+  background-color: #ff8800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #ff6700;
+}
