@@ -1,57 +1,62 @@
-/*
+/* eslint-disable no-undef */
 
-TemplateMo 559 Zay Shop
-
-https://templatemo.com/tm-559-zay-shop
-
-*/
-
-'use strict';
 $(document).ready(function() {
 
     // Accordion
-    var all_panels = $('.templatemo-accordion > li > ul').hide();
+    const allPanels = $('.templatemo-accordion > li > ul').hide();
+    const allToggles = $('.accordion-toggle');
+
+    function toggleAccordion(target) {
+        if (!target.hasClass('active')) {
+            allPanels.removeClass('active').slideUp();
+            allToggles.html('&#9660;'); // Flecha hacia abajo
+            target.addClass('active').slideDown();
+            target.prev().find('.accordion-toggle').html('&#9650;'); // Flecha hacia arriba
+        } else {
+            target.removeClass('active').slideUp();
+            target.prev().find('.accordion-toggle').html('&#9660;'); // Flecha hacia abajo
+        }
+    }
 
     $('.templatemo-accordion > li > a').click(function() {
-        console.log('Hello world!');
-        var target =  $(this).next();
-        if(!target.hasClass('active')){
-            all_panels.removeClass('active').slideUp();
-            target.addClass('active').slideDown();
-        }
-      return false;
+        const target = $(this).next();
+        toggleAccordion(target);
+        return false;
     });
     // End accordion
 
     // Product detail
-    $('.product-links-wap a').click(function(){
-      var this_src = $(this).children('img').attr('src');
-      $('#product-detail').attr('src',this_src);
-      return false;
+    $('.product-links-wap a').click(function() {
+        const thisSrc = $(this).children('img').attr('src');
+        $('#product-detail').attr('src', thisSrc);
+        return false;
     });
-    $('#btn-minus').click(function(){
-      var val = $("#var-value").html();
-      val = (val=='1')?val:val-1;
-      $("#var-value").html(val);
-      $("#product-quanity").val(val);
-      return false;
+
+    $('#btn-minus').click(function() {
+        let val = parseInt($("#var-value").html(), 10);
+        if (val > 1) {
+            val--;
+        }
+        $("#var-value").html(val);
+        $("#product-quanity").val(val);
+        return false;
     });
-    $('#btn-plus').click(function(){
-      var val = $("#var-value").html();
-      val++;
-      $("#var-value").html(val);
-      $("#product-quanity").val(val);
-      return false;
+
+    $('#btn-plus').click(function() {
+        let val = parseInt($("#var-value").html(), 10);
+        val++;
+        $("#var-value").html(val);
+        $("#product-quanity").val(val);
+        return false;
     });
-    $('.btn-size').click(function(){
-      var this_val = $(this).html();
-      $("#product-size").val(this_val);
-      $(".btn-size").removeClass('btn-secondary');
-      $(".btn-size").addClass('btn-success');
-      $(this).removeClass('btn-success');
-      $(this).addClass('btn-secondary');
-      return false;
+
+    $('.btn-size').click(function() {
+        const thisVal = $(this).html();
+        $("#product-size").val(thisVal);
+        $(".btn-size").removeClass('btn-secondary').addClass('btn-success');
+        $(this).removeClass('btn-success').addClass('btn-secondary');
+        return false;
     });
-    // End roduct detail
+    // End product detail
 
 });
