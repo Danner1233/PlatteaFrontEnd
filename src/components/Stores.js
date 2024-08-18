@@ -1,6 +1,8 @@
 import React from 'react'
+import Netflix from '../static/img/Netflix.jpg'
+import { Link } from "react-router-dom";
 
-import Card1 from "./Card3";
+import Card1 from "./Card1";
 
 const Stores = () => {
   return (
@@ -17,14 +19,14 @@ const Stores = () => {
             </div>
             <div className="col-12 col-md-4 mb-4">
               <div className="card h-100">
-                <a href="shop-single.html">
+                <Link to="/tienda-JJJ">
                   <img
-                    src={adidas}
+                    src={Netflix}
                     className="card-img-top"
                     alt="..."
                     height="270px"
                   />
-                </a>
+                </Link>
                 <div className="card-body">
                   <ul className="list-unstyled d-flex justify-content-between">
                     <li>
