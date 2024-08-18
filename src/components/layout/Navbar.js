@@ -3,9 +3,13 @@ import logo from '../../static/img/pnologo.png';
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const handleClick = (event) => {
+    event.preventDefault();
+    // Tu lógica aquí (si necesitas manejar algo en el clic)
+  };
+
   return (
     <div>
-      <div>
       <div>
         <nav className="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
           <div className="container text-light">
@@ -16,21 +20,21 @@ function Navbar() {
                   aorostegui2@gmail.com
                 </a>
                 <i className="fa fa-phone mx-2" />
-                <a className="navbar-sm-brand text-light text-decoration-none" href="javascript:void(0);">
+                <a className="navbar-sm-brand text-light text-decoration-none" href="#" onClick={handleClick}>
                   010-020-0340
                 </a>
               </div>
               <div>
-                <a className="text-light" href="javascript:void(0);" rel="sponsored">
+                <a className="text-light" href="#" onClick={handleClick} rel="sponsored">
                   <i className="fab fa-facebook-f fa-sm fa-fw me-2" />
                 </a>
-                <a className="text-light" href="javascript:void(0);">
+                <a className="text-light" href="#" onClick={handleClick}>
                   <i className="fab fa-instagram fa-sm fa-fw me-2" />
                 </a>
-                <a className="text-light" href="javascript:void(0);">
+                <a className="text-light" href="#" onClick={handleClick}>
                   <i className="fab fa-twitter fa-sm fa-fw me-2" />
                 </a>
-                <a className="text-light" href="javascript:void(0);">
+                <a className="text-light" href="#" onClick={handleClick}>
                   <i className="fab fa-linkedin fa-sm fa-fw" />
                 </a>
               </div>
@@ -63,7 +67,6 @@ function Navbar() {
                   <li className="nav-item">
                     <Link className="nav-link" to="/contactanos">Contactanos</Link>
                   </li>
-                  
                 </ul>
               </div>
               <div className="navbar align-self-center d-flex">
@@ -75,24 +78,23 @@ function Navbar() {
                     </div>
                   </div>
                 </div>
-                <a className="nav-icon d-none d-lg-inline" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                <a className="nav-icon d-none d-lg-inline" href="#" onClick={handleClick} data-bs-toggle="modal" data-bs-target="#templatemo_search">
                   <i className="fa fa-fw fa-search text-dark mr-2" />
                 </a>
                 <Link className="nav-icon position-relative text-decoration-none" to="/carrito">
                   <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1" />
                 </Link>
                 <Link className="nav-icon position-relative text-decoration-none" to="/perfil">
-                <i className="fa fa-fw fa-user text-dark mr-3" />
+                  <i className="fa fa-fw fa-user text-dark mr-3" />
                 </Link>
                 <Link className="nav-icon position-relative text-decoration-none" to="/ajustes">
-                <i className="fa fa-fw fa-cog text-dark mr-3" />
+                  <i className="fa fa-fw fa-cog text-dark mr-3" />
                 </Link>
               </div>
             </div>
           </div>
         </nav>
       </div>
-    </div>
     </div>
   );
 }

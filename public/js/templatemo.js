@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 
 // eslint-disable-next-line no-undef
-$(document).ready(function() {
+$(window).on('load', function() {
 
     // Accordion
     var all_panels = $('.templatemo-accordion > li > ul').hide();
@@ -9,7 +9,7 @@ $(document).ready(function() {
     // eslint-disable-next-line no-undef
     $('.templatemo-accordion > li > a').click(function() {
         var target = $(this).next();
-        if(!target.hasClass('active')){
+        if (!target.hasClass('active')) {
             all_panels.removeClass('active').slideUp();
             target.addClass('active').slideDown();
         } else {
@@ -30,7 +30,7 @@ $(document).ready(function() {
     // eslint-disable-next-line no-undef
     $('#btn-minus').click(function(){
         var val = parseInt($("#var-value").html());
-        if(val > 1) {
+        if (val > 1) {
             val--;
         }
         $("#var-value").html(val);
