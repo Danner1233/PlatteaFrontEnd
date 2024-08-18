@@ -1,13 +1,14 @@
-import React from 'react'
-import Card from '../components/Card'
-
+import React from "react";
+import Modal from "../components/Modal";
+import Cart from "../components/Cart";
 
 const Carrito = () => {
   return (
     <div>
-        <Card />
+      <Modal />
+      <Cart />
     </div>
-  )
-}
+  );
+};
 
-export default Carrito
+export default Carrito;

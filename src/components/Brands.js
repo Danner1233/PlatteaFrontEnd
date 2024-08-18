@@ -23,7 +23,7 @@ const Brands = () => {
                                 {/*Controls*/}
                                 <div className="col-1 align-self-center">
                                     <a className="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="prev">
-                                        <i className="text-light fas fa-chevron-left" />
+                                    <i class="fas fa-less-than" />
                                     </a>
                                 </div>
                                 {/*End Controls*/}
@@ -94,7 +94,7 @@ const Brands = () => {
                                 {/*Controls*/}
                                 <div className="col-1 align-self-center">
                                     <a className="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="next">
-                                        <i className="text-light fas fa-chevron-right" />
+                                    <i class="fas fa-greater-than" />
                                     </a>
                                 </div>
                                 {/*End Controls*/}

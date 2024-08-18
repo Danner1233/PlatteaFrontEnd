@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Card = () => {
@@ -66,7 +67,7 @@ const Card = () => {
           <span>Total</span>
           <span>$280.000</span>
         </div>
-        <button className="checkout-button">Checkout</button>
+        <Link className="checkout-button" to="/tarjeta">Checkout</Link>
       </div>
     </div>
   );

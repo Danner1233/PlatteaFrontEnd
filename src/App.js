@@ -22,6 +22,12 @@ import { Card } from "react-bootstrap";
 import Tienda from "./pages/Tienda";
 import Bannertienda from "./components/Bannertienda";
 import Productostienda from "./components/Productostienda";
+import Cart from "./components/Cart"
+import Card3 from "./components/Card3";
+import Card2 from "./components/Card2";
+import Card1 from "./components/Card1";
+import Pago from "./components/Pago";
+import Tarjeta from "./pages/Tarjeta";
 
 function App() {
   return (
@@ -49,6 +55,12 @@ function App() {
         <Route path="/tienda-JJJ" element={<Tienda />} />
         <Route path="/bannerti" element={<Bannertienda />} />
         <Route path="/productoti" element={<Productostienda />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/card1" element={<Card3 />} />
+        <Route path="/card2" element={<Card2 />} />
+        <Route path="/card3" element={<Card1 />} />
+        <Route path="/pago" element={<Pago />} />
+        <Route path="/tarjeta" element={<Tarjeta />} />
       </Routes>
       <Footer />
     </Router>

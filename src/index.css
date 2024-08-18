@@ -11610,6 +11610,7 @@ fieldset:disabled .btn {
   font-variant: normal;
   text-rendering: auto;
   line-height: 1;
+  color: grey;
 }
 
 .fa-lg {
@@ -18200,7 +18201,7 @@ body, ul, li, p, a, label, input, div {
 
 .perfil-container {
   width: 100%;
-  min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+  min-height: 80vh; /* Asegura que ocupe toda la pantalla */
   display: flex;
   flex-direction: column;
   align-items: center;
