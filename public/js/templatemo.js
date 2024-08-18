@@ -1,40 +1,36 @@
 /* eslint-disable no-undef */
 
+// eslint-disable-next-line no-undef
 $(document).ready(function() {
 
     // Accordion
-    const allPanels = $('.templatemo-accordion > li > ul').hide();
-    const allToggles = $('.accordion-toggle');
+    var all_panels = $('.templatemo-accordion > li > ul').hide();
 
-    function toggleAccordion(target) {
-        if (!target.hasClass('active')) {
-            allPanels.removeClass('active').slideUp();
-            allToggles.html('&#9660;'); // Flecha hacia abajo
+    // eslint-disable-next-line no-undef
+    $('.templatemo-accordion > li > a').click(function() {
+        var target = $(this).next();
+        if(!target.hasClass('active')){
+            all_panels.removeClass('active').slideUp();
             target.addClass('active').slideDown();
-            target.prev().find('.accordion-toggle').html('&#9650;'); // Flecha hacia arriba
         } else {
             target.removeClass('active').slideUp();
-            target.prev().find('.accordion-toggle').html('&#9660;'); // Flecha hacia abajo
         }
-    }
-
-    $('.templatemo-accordion > li > a').click(function() {
-        const target = $(this).next();
-        toggleAccordion(target);
         return false;
     });
     // End accordion
 
     // Product detail
-    $('.product-links-wap a').click(function() {
-        const thisSrc = $(this).children('img').attr('src');
-        $('#product-detail').attr('src', thisSrc);
+    // eslint-disable-next-line no-undef
+    $('.product-links-wap a').click(function(){
+        var this_src = $(this).children('img').attr('src');
+        $('#product-detail').attr('src', this_src);
         return false;
     });
 
-    $('#btn-minus').click(function() {
-        let val = parseInt($("#var-value").html(), 10);
-        if (val > 1) {
+    // eslint-disable-next-line no-undef
+    $('#btn-minus').click(function(){
+        var val = parseInt($("#var-value").html());
+        if(val > 1) {
             val--;
         }
         $("#var-value").html(val);
@@ -42,17 +38,17 @@ $(document).ready(function() {
         return false;
     });
 
-    $('#btn-plus').click(function() {
-        let val = parseInt($("#var-value").html(), 10);
+    $('#btn-plus').click(function(){
+        var val = parseInt($("#var-value").html());
         val++;
         $("#var-value").html(val);
         $("#product-quanity").val(val);
         return false;
     });
 
-    $('.btn-size').click(function() {
-        const thisVal = $(this).html();
-        $("#product-size").val(thisVal);
+    $('.btn-size').click(function(){
+        var this_val = $(this).html();
+        $("#product-size").val(this_val);
         $(".btn-size").removeClass('btn-secondary').addClass('btn-success');
         $(this).removeClass('btn-success').addClass('btn-secondary');
         return false;

@@ -55,7 +55,7 @@ function Navbar() {
                     <Link className="nav-link" to="/tiendas">Tiendas</Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/productos">Comprar</Link>
+                    <Link className="nav-link" to="/products">Comprar</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/Aboutus">Sobre</Link>

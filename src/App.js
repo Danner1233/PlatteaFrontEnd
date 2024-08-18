@@ -17,7 +17,6 @@ import Product from "./pages/Product";
 import Perfil from "./pages/Perfil";
 import Carrito from "./pages/Carrito";
 import Banner from "./components/Banner";
-import { Card } from "react-bootstrap";
 import Tienda from "./pages/Tienda";
 import Bannertienda from "./components/Bannertienda";
 import Productostienda from "./components/Productostienda";
@@ -42,21 +41,20 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/infocontact" element={<Infocontact />} />
         <Route path="/productos" element={<Shop />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/products" element={<Products/>} />
         <Route path="/tiendas" element={<Tiendas />} />
         <Route path="/stores" element={<Stores />} />
         <Route path="/producto" element={<Product />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/banner" element={<Banner />} />
         <Route path="/carrito" element={<Carrito />} />
-        <Route path="/card" element={<Card />} />
         <Route path="/tienda-JJJ" element={<Tienda />} />
         <Route path="/bannerti" element={<Bannertienda />} />
         <Route path="/productoti" element={<Productostienda />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/card1" element={<Card3 />} />
         <Route path="/card2" element={<Card2 />} />
-        <Route path="/card3" element={<Card1 />} />
+        <Route path="/cardÑ3" element={<Card1 />} />
         <Route path="/pago" element={<Pago />} />
         <Route path="/tarjeta" element={<Tarjeta />} />
       </Routes>
