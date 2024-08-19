@@ -1,6 +1,8 @@
 import React from "react";
 import logo from '../../static/img/pnologo.png';
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 
 function Navbar() {
   const handleClick = (event) => {
@@ -87,9 +89,26 @@ function Navbar() {
                 <Link className="nav-icon position-relative text-decoration-none" to="/perfil">
                   <i className="fa fa-fw fa-user text-dark mr-3" />
                 </Link>
-                <Link className="nav-icon position-relative text-decoration-none" to="/ajustes">
-                  <i className="fa fa-fw fa-cog text-dark mr-3" />
-                </Link>
+                {/* Dropdown */}
+                <div className="dropdown">
+                  <a className="nav-icon position-relative text-decoration-none dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i className="fa fa-fw fa-cog text-dark mr-3" />
+                  </a>
+                  <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li>
+                      <Link className="dropdown-item" to="/configuracion">Configuración</Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/historial">Historial</Link>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/maininit">Cerrar Sesión</Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

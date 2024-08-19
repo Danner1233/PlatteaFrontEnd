@@ -38,7 +38,7 @@ function Navbar() {
         </nav>
         <nav className="navbar navbar-expand-lg navbar-light shadow">
           <div className="container d-flex justify-content-between align-items-center">
-            <Link className="navbar-brand text-success logo h1 align-self-center" to="/">
+            <Link className="navbar-brand text-success logo h1 align-self-center" to="/maininit">
               <img src={logo} alt="Logo" width={58} height={53} />
             </Link>
             <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,27 +48,24 @@ function Navbar() {
               <div className="flex-fill">
                 <ul className="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/">Inicio</Link>
+                    <Link className="nav-link" to="/maininit">Inicio</Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/tiendas">Tiendas</Link>
+                    <Link className="nav-link" to="/tiendasinit">Tiendas</Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/productos">Comprar</Link>
+                    <Link className="nav-link" to="/shopinit">Comprar</Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/Aboutus">Sobre</Link>
+                    <Link className="nav-link" to="/aboutinit">Sobre</Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/contactanos">Contáctanos</Link>
+                    <Link className="nav-link" to="/contactusinit">Contáctanos</Link>
                   </li>
                 </ul>
               </div>
               <div className="navbar align-self-center d-flex">
-                <Link className="btn btn-outline-primary me-2" to="/registrarse">
-                  Registrarse
-                </Link>
-                <Link className="btn btn-outline-success" to="/iniciar-sesion">
+                <Link className="btn btn-outline-success" to="/iniciosesion">
                   Iniciar Sesión
                 </Link>
               </div>
