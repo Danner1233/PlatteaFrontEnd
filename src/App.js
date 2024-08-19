@@ -1,5 +1,3 @@
-import Footer from "./components/layout/Footer";
-import Navbar from "./components/layout/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Main from "./pages/Main";
 import Aboutus from "./pages/Aboutus";
@@ -28,11 +26,15 @@ import Card2 from "./components/Card2";
 import Card1 from "./components/Card1";
 import Pago from "./components/Pago";
 import Tarjeta from "./pages/Tarjeta";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Overleylogin from "./components/Overleylogin";
+import Overleyregister from "./components/Overleyregister";
+import Iniciodesesio from "./pages/Iniciodesesio";
 
 function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/aboutus" element={<Aboutus />} />
@@ -61,8 +63,12 @@ function App() {
         <Route path="/card3" element={<Card1 />} />
         <Route path="/pago" element={<Pago />} />
         <Route path="/tarjeta" element={<Tarjeta />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/overleylogin" element={<Overleylogin />} />
+        <Route path="/overleyregister" element={<Overleyregister />} />
+        <Route path="/iniciosesion" element={<Iniciodesesio />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }

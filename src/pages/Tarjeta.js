@@ -5,6 +5,7 @@ const Tarjeta = () => {
   return (
     <div>
         <Pago />
+        
     </div>
   )
 }
