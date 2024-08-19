@@ -29,6 +29,13 @@ import Register from "./components/Register";
 import Overleylogin from "./components/Overleylogin";
 import Overleyregister from "./components/Overleyregister";
 import Iniciodesesio from "./pages/Iniciodesesio";
+import Filtro from "./components/Filtro";
+import Filtrodos from "./components/Filtrodos";
+import Filtrotres from "./components/Filtrotres";
+import Productogeneral from "./components/Productogeneral";
+import Cambiodehoja from "./components/Cambiodehoja";
+import Productocubiculo from './components/Productocubiculo';
+
 
 function App() {
   return (
@@ -64,6 +71,12 @@ function App() {
         <Route path="/overleylogin" element={<Overleylogin />} />
         <Route path="/overleyregister" element={<Overleyregister />} />
         <Route path="/iniciosesion" element={<Iniciodesesio />} />
+        <Route path="/filtro" element={<Filtro />} />
+        <Route path="/filtro2" element={<Filtrodos />} />
+        <Route path="/filtro3" element={<Filtrotres />} />
+        <Route path="/progeneral" element={<Productogeneral />} />
+        <Route path="/Cambiohoja" element={<Cambiodehoja />} />
+        <Route path="/productocubiculo" element={<Productocubiculo />} />
       </Routes>
     </Router>
   );
