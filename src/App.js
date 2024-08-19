@@ -1,6 +1,7 @@
-import Footer from "./components/layout/Footer";
-import Navbar from "./components/layout/Navbar";
+
+
 import { Route, Routes } from "react-router-dom";
+
 import Main from "./pages/Main";
 import Aboutus from "./pages/Aboutus";
 import About from "./components/About";
@@ -26,11 +27,22 @@ import Card2 from "./components/Card2";
 import Card1 from "./components/Card1";
 import Pago from "./components/Pago";
 import Tarjeta from "./pages/Tarjeta";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Overleylogin from "./components/Overleylogin";
+import Overleyregister from "./components/Overleyregister";
+import Iniciodesesio from "./pages/Iniciodesesio";
+import Filtro from "./components/Filtro";
+import Filtrodos from "./components/Filtrodos";
+import Filtrotres from "./components/Filtrotres";
+import Productogeneral from "./components/Productogeneral";
+import Cambiodehoja from "./components/Cambiodehoja";
+import Productocubiculo from './components/Productocubiculo';
+
 
 function App() {
   return (
     <>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/aboutus" element={<Aboutus />} />
@@ -57,8 +69,18 @@ function App() {
         <Route path="/card3" element={<Card1 />} />
         <Route path="/pago" element={<Pago />} />
         <Route path="/tarjeta" element={<Tarjeta />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/overleylogin" element={<Overleylogin />} />
+        <Route path="/overleyregister" element={<Overleyregister />} />
+        <Route path="/iniciosesion" element={<Iniciodesesio />} />
+        <Route path="/filtro" element={<Filtro />} />
+        <Route path="/filtro2" element={<Filtrodos />} />
+        <Route path="/filtro3" element={<Filtrotres />} />
+        <Route path="/progeneral" element={<Productogeneral />} />
+        <Route path="/Cambiohoja" element={<Cambiodehoja />} />
+        <Route path="/productocubiculo" element={<Productocubiculo />} />
       </Routes>
-      <Footer />
     </>
   );
 }

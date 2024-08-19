@@ -1,186 +1,93 @@
 import React from "react";
-import { useEffect } from 'react';
 import $ from 'jquery';
-
 import shop1 from '../static/img/shop_01.jpg';
-import shop2 from '../static/img/shop_02.jpg';
-import shop3 from '../static/img/shop_03.jpg';
-import shop4 from '../static/img/shop_04.jpg';
-import shop5 from '../static/img/shop_05.jpg';
-import shop6 from '../static/img/shop_06.jpg';
-import shop7 from '../static/img/shop_07.jpg';
-import shop8 from '../static/img/shop_08.jpg';
-import shop9 from '../static/img/shop_09.jpg';
+import Filtro from "./Filtro";
+import Filtrodos from "./Filtrodos";
+import Filtrotres from "./Filtrotres";
+import { useEffect, useState } from "react";
+import { getProductos } from '../api/producto.api'
+import Cambiodehoja from "./Cambiodehoja";
 
-const Products = () => {
+function Products() {
   useEffect(() => {
     // Accordion
     const allPanels = $('.templatemo-accordion > li > ul').hide();
 
     $('.templatemo-accordion > li > a').click(function () {
-        const target = $(this).next();
-        if (!target.hasClass('active')) {
-            allPanels.removeClass('active').slideUp();
-            target.addClass('active').slideDown();
-        } else {
-            target.removeClass('active').slideUp();
-        }
-        return false;
+      const target = $(this).next();
+      if (!target.hasClass('active')) {
+        allPanels.removeClass('active').slideUp();
+        target.addClass('active').slideDown();
+      } else {
+        target.removeClass('active').slideUp();
+      }
+      return false;
     });
     // End accordion
 
     // Product detail
     $('.product-links-wap a').click(function () {
-        const thisSrc = $(this).children('img').attr('src');
-        $('#product-detail').attr('src', thisSrc);
-        return false;
+      const thisSrc = $(this).children('img').attr('src');
+      $('#product-detail').attr('src', thisSrc);
+      return false;
     });
 
     $('#btn-minus').click(function () {
-        let val = parseInt($("#var-value").html());
-        if (val > 1) {
-            val--;
-        }
-        $("#var-value").html(val);
-        $("#product-quanity").val(val);
-        return false;
+      let val = parseInt($("#var-value").html());
+      if (val > 1) {
+        val--;
+      }
+      $("#var-value").html(val);
+      $("#product-quanity").val(val);
+      return false;
     });
 
     $('#btn-plus').click(function () {
-        let val = parseInt($("#var-value").html());
-        val++;
-        $("#var-value").html(val);
-        $("#product-quanity").val(val);
-        return false;
+      let val = parseInt($("#var-value").html());
+      val++;
+      $("#var-value").html(val);
+      $("#product-quanity").val(val);
+      return false;
     });
 
     $('.btn-size').click(function () {
-        const thisVal = $(this).html();
-        $("#product-size").val(thisVal);
-        $(".btn-size").removeClass('btn-secondary').addClass('btn-success');
-        $(this).removeClass('btn-success').addClass('btn-secondary');
-        return false;
+      const thisVal = $(this).html();
+      $("#product-size").val(thisVal);
+      $(".btn-size").removeClass('btn-secondary').addClass('btn-success');
+      $(this).removeClass('btn-success').addClass('btn-secondary');
+      return false;
     });
-    // End product detail
+  }, []);
+  const [productos, setProductos] = useState([])
+  useEffect(() => {
+    async function cargarProductos() {
 
-}, []);
-// Empty dependency array means this effect runs once after the initial render
+      const response = await getProductos()
+      setProductos(response.data)
+      console.log(response)
+    }
+    cargarProductos()
+
+  }, [])
+  // Empty dependency array means this effect runs once after the initial render
   return (
     <div className="container py-5">
       <div className="row">
-        <div className="col-lg-3">
-        <h1 className="h2 pb-4">Categories</h1>
-      <ul className="list-unstyled templatemo-accordion">
-        <li className="pb-3">
-          <a
-            className="collapsed d-flex justify-content-between h3 text-decoration-none"
-            href="#"
-          >
-            Genero
-            <i className="fa fa-fw fa-chevron-circle-down mt-1 accordion-toggle" />
-          </a>
-          <ul className="collapse show list-unstyled pl-3">
-            <li>
-              <a className="text-decoration-none" href="#">
-                Hombre
-              </a>
-            </li>
-            <li>
-              <a className="text-decoration-none" href="#">
-                Mujer
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li className="pb-3">
-          <a
-            className="collapsed d-flex justify-content-between h3 text-decoration-none"
-            href="#"
-          >
-            Sale
-            <i className="fa fa-fw fa-chevron-circle-down mt-1 accordion-toggle" />
-          </a>
-          <ul id="collapseTwo" className="collapse list-unstyled pl-3">
-            <li>
-              <a className="text-decoration-none" href="#">
-                Deportivo
-              </a>
-            </li>
-            <li>
-              <a className="text-decoration-none" href="#">
-                Lujo
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li className="pb-3">
-          <a
-            className="collapsed d-flex justify-content-between h3 text-decoration-none"
-            href="#"
-          >
-            Producto
-            <i className="fa fa-fw fa-chevron-circle-down mt-1 accordion-toggle" />
-          </a>
-          <ul id="collapseThree" className="collapse list-unstyled pl-3">
-            <li>
-              <a className="text-decoration-none" href="#">
-                Bolsa
-              </a>
-            </li>
-            <li>
-              <a className="text-decoration-none" href="#">
-                Jersey
-              </a>
-            </li>
-            <li>
-              <a className="text-decoration-none" href="#">
-                Gafas de sol
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-        </div>
+        <Filtro />
         <div className="col-lg-9">
           <div className="row">
-            <div className="col-md-6">
-              <ul className="list-inline shop-top-menu pb-3 pt-1">
-                <li className="list-inline-item">
-                  <a
-                    className="h3 text-dark text-decoration-none mr-3"
-                    href="#"
-                  >
-                    Todo
-                  </a>
-                </li>
-                <li className="list-inline-item">
-                  <a
-                    className="h3 text-dark text-decoration-none mr-3"
-                    href="#"
-                  >
-                    Hombre
-                  </a>
-                </li>
-                <li className="list-inline-item">
-                  <a className="h3 text-dark text-decoration-none" href="#">
-                    Mujer
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-6 pb-4">
-              <div className="d-flex">
-                <select className="form-control">
-                  <option>Destacado</option>
-                  <option>A - Z</option>
-                  <option>Articulo</option>
-                </select>
-              </div>
-            </div>
+            <Filtrodos />
+            <Filtrotres />
+
           </div>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="card mb-4 product-wap rounded-0">
+
+          <div  className="row">
+          {
+          productos.map(producto => (
+            <div key={producto.IdProducto} className="col-md-4">
+            
+              
+               <div  className="card mb-4 product-wap rounded-0">
                 <div className="card rounded-0">
                   <img
                     className="card-img rounded-0 img-fluid"
@@ -220,10 +127,9 @@ const Products = () => {
                     href="/producto"
                     className="h3 text-decoration-none"
                   >
-                    Oupidatat non
+                    {producto.NombreProducto}
                   </a>
                   <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
-                    <li>M/L/X/XL</li>
                     <li className="pt-2">
                       <span className="product-color-dot color-dot-red float-left rounded-circle ml-1" />
                       <span className="product-color-dot color-dot-blue float-left rounded-circle ml-1" />
@@ -241,567 +147,15 @@ const Products = () => {
                       <i className="text-muted fa fa-star" />
                     </li>
                   </ul>
-                  <p className="text-center mb-0">$250.00</p>
+                  <p className="text-center mb-0">$ {producto.PrecioProducto}</p>
                 </div>
-              </div>
+              </div> 
+            
             </div>
-            <div className="col-md-4">
-              <div className="card mb-4 product-wap rounded-0">
-                <div className="card rounded-0">
-                  <img
-                    className="card-img rounded-0 img-fluid"
-                    src={shop2}
-                  />
-                  <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                    <ul className="list-unstyled">
-                      <li>
-                        <a
-                          className="btn btn-success text-white"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-heart" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-eye" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="fas fa-cart-plus" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <a
-                    href="shop-single.html"
-                    className="h3 text-decoration-none"
-                  >
-                    Oupidatat non
-                  </a>
-                  <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
-                    <li>M/L/X/XL</li>
-                    <li className="pt-2">
-                      <span className="product-color-dot color-dot-red float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-blue float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-black float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-light float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-green float-left rounded-circle ml-1" />
-                    </li>
-                  </ul>
-                  <ul className="list-unstyled d-flex justify-content-center mb-1">
-                    <li>
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                    </li>
-                  </ul>
-                  <p className="text-center mb-0">$250.00</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card mb-4 product-wap rounded-0">
-                <div className="card rounded-0">
-                  <img
-                    className="card-img rounded-0 img-fluid"
-                    src={shop3}
-                  />
-                  <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                    <ul className="list-unstyled">
-                      <li>
-                        <a
-                          className="btn btn-success text-white"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-heart" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-eye" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="fas fa-cart-plus" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <a
-                    href="shop-single.html"
-                    className="h3 text-decoration-none"
-                  >
-                    Oupidatat non
-                  </a>
-                  <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
-                    <li>M/L/X/XL</li>
-                    <li className="pt-2">
-                      <span className="product-color-dot color-dot-red float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-blue float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-black float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-light float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-green float-left rounded-circle ml-1" />
-                    </li>
-                  </ul>
-                  <ul className="list-unstyled d-flex justify-content-center mb-1">
-                    <li>
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                    </li>
-                  </ul>
-                  <p className="text-center mb-0">$250.00</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card mb-4 product-wap rounded-0">
-                <div className="card rounded-0">
-                  <img
-                    className="card-img rounded-0 img-fluid"
-                    src={shop4}
-                  />
-                  <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                    <ul className="list-unstyled">
-                      <li>
-                        <a
-                          className="btn btn-success text-white"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-heart" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-eye" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="fas fa-cart-plus" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <a
-                    href="shop-single.html"
-                    className="h3 text-decoration-none"
-                  >
-                    Oupidatat non
-                  </a>
-                  <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
-                    <li>M/L/X/XL</li>
-                    <li className="pt-2">
-                      <span className="product-color-dot color-dot-red float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-blue float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-black float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-light float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-green float-left rounded-circle ml-1" />
-                    </li>
-                  </ul>
-                  <ul className="list-unstyled d-flex justify-content-center mb-1">
-                    <li>
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                    </li>
-                  </ul>
-                  <p className="text-center mb-0">$250.00</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card mb-4 product-wap rounded-0">
-                <div className="card rounded-0">
-                  <img
-                    className="card-img rounded-0 img-fluid"
-                    src={shop5}
-                  />
-                  <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                    <ul className="list-unstyled">
-                      <li>
-                        <a
-                          className="btn btn-success text-white"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-heart" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-eye" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="fas fa-cart-plus" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <a
-                    href="shop-single.html"
-                    className="h3 text-decoration-none"
-                  >
-                    Oupidatat non
-                  </a>
-                  <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
-                    <li>M/L/X/XL</li>
-                    <li className="pt-2">
-                      <span className="product-color-dot color-dot-red float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-blue float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-black float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-light float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-green float-left rounded-circle ml-1" />
-                    </li>
-                  </ul>
-                  <ul className="list-unstyled d-flex justify-content-center mb-1">
-                    <li>
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                    </li>
-                  </ul>
-                  <p className="text-center mb-0">$250.00</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card mb-4 product-wap rounded-0">
-                <div className="card rounded-0">
-                  <img
-                    className="card-img rounded-0 img-fluid"
-                    src={shop6}
-                  />
-                  <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                    <ul className="list-unstyled">
-                      <li>
-                        <a
-                          className="btn btn-success text-white"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-heart" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-eye" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="fas fa-cart-plus" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <a
-                    href="shop-single.html"
-                    className="h3 text-decoration-none"
-                  >
-                    Oupidatat non
-                  </a>
-                  <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
-                    <li>M/L/X/XL</li>
-                    <li className="pt-2">
-                      <span className="product-color-dot color-dot-red float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-blue float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-black float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-light float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-green float-left rounded-circle ml-1" />
-                    </li>
-                  </ul>
-                  <ul className="list-unstyled d-flex justify-content-center mb-1">
-                    <li>
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                    </li>
-                  </ul>
-                  <p className="text-center mb-0">$250.00</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card mb-4 product-wap rounded-0">
-                <div className="card rounded-0">
-                  <img
-                    className="card-img rounded-0 img-fluid"
-                    src={shop7}
-                  />
-                  <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                    <ul className="list-unstyled">
-                      <li>
-                        <a
-                          className="btn btn-success text-white"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-heart" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-eye" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="fas fa-cart-plus" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <a
-                    href="shop-single.html"
-                    className="h3 text-decoration-none"
-                  >
-                    Oupidatat non
-                  </a>
-                  <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
-                    <li>M/L/X/XL</li>
-                    <li className="pt-2">
-                      <span className="product-color-dot color-dot-red float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-blue float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-black float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-light float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-green float-left rounded-circle ml-1" />
-                    </li>
-                  </ul>
-                  <ul className="list-unstyled d-flex justify-content-center mb-1">
-                    <li>
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                    </li>
-                  </ul>
-                  <p className="text-center mb-0">$250.00</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card mb-4 product-wap rounded-0">
-                <div className="card rounded-0">
-                  <img
-                    className="card-img rounded-0 img-fluid"
-                    src={shop8}
-                  />
-                  <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                    <ul className="list-unstyled">
-                      <li>
-                        <a
-                          className="btn btn-success text-white"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-heart" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-eye" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="fas fa-cart-plus" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <a
-                    href="shop-single.html"
-                    className="h3 text-decoration-none"
-                  >
-                    Oupidatat non
-                  </a>
-                  <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
-                    <li>M/L/X/XL</li>
-                    <li className="pt-2">
-                      <span className="product-color-dot color-dot-red float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-blue float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-black float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-light float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-green float-left rounded-circle ml-1" />
-                    </li>
-                  </ul>
-                  <ul className="list-unstyled d-flex justify-content-center mb-1">
-                    <li>
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                    </li>
-                  </ul>
-                  <p className="text-center mb-0">$250.00</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card mb-4 product-wap rounded-0">
-                <div className="card rounded-0">
-                  <img
-                    className="card-img rounded-0 img-fluid"
-                    src={shop9}
-                  />
-                  <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                    <ul className="list-unstyled">
-                      <li>
-                        <a
-                          className="btn btn-success text-white"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-heart" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="far fa-eye" />
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="btn btn-success text-white mt-2"
-                          href="shop-single.html"
-                        >
-                          <i className="fas fa-cart-plus" />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="card-body">
-                  <a
-                    href="shop-single.html"
-                    className="h3 text-decoration-none"
-                  >
-                    Oupidatat non
-                  </a>
-                  <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
-                    <li>M/L/X/XL</li>
-                    <li className="pt-2">
-                      <span className="product-color-dot color-dot-red float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-blue float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-black float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-light float-left rounded-circle ml-1" />
-                      <span className="product-color-dot color-dot-green float-left rounded-circle ml-1" />
-                    </li>
-                  </ul>
-                  <ul className="list-unstyled d-flex justify-content-center mb-1">
-                    <li>
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-warning fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                      <i className="text-muted fa fa-star" />
-                    </li>
-                  </ul>
-                  <p className="text-center mb-0">$250.00</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
           <div div="row">
-            <ul className="pagination pagination-lg justify-content-end">
-              <li className="page-item disabled">
-                <a
-                  className="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0"
-                  href="#"
-                  tabIndex={-1}
-                >
-                  1
-                </a>
-              </li>
-              <li className="page-item">
-                <a
-                  className="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark"
-                  href="#"
-                >
-                  2
-                </a>
-              </li>
-              <li className="page-item">
-                <a
-                  className="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark"
-                  href="#"
-                >
-                  3
-                </a>
-              </li>
-            </ul>
+            <Cambiodehoja />
           </div>
         </div>
       </div>
@@ -810,3 +164,33 @@ const Products = () => {
 };
 
 export default Products;
+/* function Tienda() {
+  return (
+
+    <div>
+
+      <div>
+        <Navbar />
+        <Modal />
+        <Bannertienda />
+        <div className="store-container">
+          <div className="products">
+            {
+              productos.map(producto => (
+                <div key={producto.IdProducto} className="product">
+                  <img src={levis} alt="Product 1" />
+                  <h2>{producto.NombreProducto}</h2>
+                  <p>{producto.DescripcionProducto}</p>
+                  <p>$ {producto.PrecioProducto}</p>
+                  <button className="buy-button">Add to Cart</button>
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default Tienda; */

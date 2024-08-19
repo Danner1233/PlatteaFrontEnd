@@ -20,7 +20,6 @@ const Modal = () => {
           />
         </div>
         <form
-          action
           method="get"
           className="modal-content modal-body border-0 p-0"
         >
