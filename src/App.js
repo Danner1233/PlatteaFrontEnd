@@ -1,6 +1,6 @@
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Main from "./pages/Main";
 import Aboutus from "./pages/Aboutus";
 import About from "./components/About";
@@ -20,7 +20,7 @@ import Banner from "./components/Banner";
 import Tienda from "./pages/Tienda";
 import Bannertienda from "./components/Bannertienda";
 import Productostienda from "./components/Productostienda";
-import Cart from "./components/Cart"
+import Cart from "./components/Cart";
 import Card3 from "./components/Card3";
 import Card2 from "./components/Card2";
 import Card1 from "./components/Card1";
@@ -29,7 +29,7 @@ import Tarjeta from "./pages/Tarjeta";
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
@@ -41,7 +41,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/infocontact" element={<Infocontact />} />
         <Route path="/productos" element={<Shop />} />
-        <Route path="/products" element={<Products/>} />
+        <Route path="/products" element={<Products />} />
         <Route path="/tiendas" element={<Tiendas />} />
         <Route path="/stores" element={<Stores />} />
         <Route path="/producto" element={<Product />} />
@@ -54,12 +54,12 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/card1" element={<Card3 />} />
         <Route path="/card2" element={<Card2 />} />
-        <Route path="/cardÑ3" element={<Card1 />} />
+        <Route path="/card3" element={<Card1 />} />
         <Route path="/pago" element={<Pago />} />
         <Route path="/tarjeta" element={<Tarjeta />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   );
 }
 
