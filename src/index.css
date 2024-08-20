@@ -3563,15 +3563,16 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-success {
-  color: #F2A900;
-  border-color: #F2A900;
+  color: #000 !important;
+  border-color: #F2A900 !important;
 }
 
 .btn-outline-success:hover {
-  color: #fff;
-  background-color: #F2A900;
-  border-color: #F2A900;
+  color: #fff !important;
+  background-color: #F2A900 !important;
+  border-color: #F2A900 !important;
 }
+
 
 .btn-check:focus + .btn-outline-success,
 .btn-outline-success:focus {
